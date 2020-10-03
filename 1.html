@@ -9,8 +9,159 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script type="text/javascript" src="1.js"></script>
+    <style>
+        table,th,td{
+            border:1px solid black;
+        }
+    </style>
 </head>
 <body>
+    <blockquote><!--blockquote是使段落缩进表示-->
+        <p><q>sfaa</q>测试</p><!--q是加双引号-->
+        <p>dfsd</p>
+    </blockquote>
+    <p><abbr title="郑州轻工业大学">zzuli</abbr></p>
+   <p> <bdo dir="rtl">
+        <ruby>魑<rp>(</rp><rt>chi</rt><rp>)</rp></ruby>
+        <ruby>魅<rp>(</rp><rt>mei</rt><rp>)</rp></ruby>
+        <ruby>魍<rp>(</rp><rt>wang</rt><rp>)</rp></ruby>
+        <ruby>魉<rp>(</rp><rt>liang</rt><rp>)</rp></ruby>
+    </bdo></p>
+    <del>123</del><ins>456</ins>
+    <s>123</s><u>456</u>
+    <p>123<mark>456</mark>789</p>
+    <p>x<sup>2</sup></p>
+    <p>x<sub>2</sub></p>
+    <ul><!--无序列表-->
+        <li>1</li>
+        <li>2</li>
+    </ul>
+    <ol><!--有序列表-->
+        <li>1</li>
+        <li>2</li>
+    </ol>
+    <a href="http://www.baidu.com">1</a>
+    <table>
+        <caption>表的标题</caption>
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+        </tr>
+        <tr>
+            <td><a href="http://www.qq.com">tang</a></td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td colspan="2">跨两列</td>
+        </tr>
+    </table>
+<form action="" method="post" autocomplete="off"><!--autocomplete可以设置浏览器自动填充是否开启，默认为on-->
+    测试<input type="text" name="name" value="汤"><br>
+    测试<input type="text" name="name1" value="石化" disabled><br>
+    测试<input type="text" name="name2" value="无法修改" readonly><br>
+    <label>测试<input type="text" name="name3" value="汤1"><br></label><!--点击文本就可以将光标移入到文本框开始输入，隐式关联-->
+    <label for="name">测试</label><input type="text" name="name3" value="汤1" id="name"><br>
+    <button type="submit">提交</button><br><br>
+    <input type="reset" value="重写">
+    <fieldset>
+        <legend>信息</legend>
+        测试<input type="text" name="name" value="汤"><br>
+        性别<select name="sex">
+        <option value="male">男</option>
+        <option value="female">女</option>
+    </select>
+        性别<label><input type="radio" name="sex" value="male">男</label>
+            <label><input type="radio" name="sex" value="female">女</label>
+        测试<input type="text" name="name" value="汤"><br>
+    </fieldset>
+    <fieldset>
+        <legend>测试</legend>
+        测试<input type="text" name="name" value="汤"><br>
+        测试<input type="text" name="name" value="汤"><br>
+    </fieldset>
+    <input type="checkbox" name="test" value="1">1
+    <input type="checkbox" name="test" value="2">2
+    <br>
+    <input type="submit" value="提交">
+    <fieldset>
+        <legend>日期与时间</legend>
+        <label><input type="time" name="time"></label><br>
+        <label><input type="date" name="date"></label><br>
+        <label><input type="week" name="week"></label><br>
+        <label><input type="datetime-local" name="datetime-local"></label><br>
+        <input type="submit" value="提交">
+        <button type="reset">重写</button>
+    </fieldset>
+    <label><input type="color" name="color"></label><br>
+    <label>图片按钮<input type="image" src="图片路径" alt="图片描述"></label>
+    <label>隐藏元素<input type="hidden" value="已隐藏" disabled></label><!--disabled表示将此元素列入无用-->
+    <fieldset>
+        <legend>上传文件</legend>
+        <form action="" method="post" enctype="multipart/form-data"><!--一定要设置enctype属性-->
+            <label><input type="hidden" name="MAX_FILE_SIZE" value="1024"></label>
+            <label>选择要上传的文件：<input type="file" name="file" accept="image/*" multiple></label>
+            <label><input type="submit" name="提交"></label>
+        </form>
+    </fieldset><br>
+    <label>数字输入<input type="number" name="number" min="0" max="99" step="1"></label>
+    <label>滚动条<input type="range" name="test" min="0" max="100" step="1"></label>
+    <br>
+    <form action="" method="post">
+        <label>电话<input type="tel" name="tel" pattern="<!--正则表达式-->" placeholder="提示内容在此" required list="tellist"></label><br><!--使用patern进行自定义判断输入内容是否符合条件-->
+        <label>电话<input type="tel" name="tel" pattern="<!--正则表达式-->" value="提示内容在此" required></label><br><!--required设置所填不能为空-->
+        <button type="submit">提交</button><br>
+        <input type="submit" value="提交2">
+    </form>
+    <datalist id="tellist">
+        <option value="110">公安</option>
+        <option value="119">火警</option>
+        <option value="120">医院</option>
+    </datalist>
+</form>
+<form action="" merhod="post">
+    <textarea name="text" rows="5" cols="20" wrap="hard">
+        seufhguweshfguiwsgheetiouwagtouiasghefoutyatgouyaghtouayghouy是的各色公司的
+        方式发给色粉色鹅嘎杀五个散点图委托为由提起二色的特高压为人员提供企鹅舞岁的法国v色发帖嘎斯
+    </textarea><br><br>
+    <label id="upLabel"><input type="file" accept="image/*" id="upFile" onchang="upShow(this)"></label>
+    <div id="showZone">
+        <img id="imgShowing">
+    </div>
+    <label><input type="button" value="按钮" class="btnBuy" onclick="loveFishc()"></label>
+</form>
 
+<section>
+    <details open>
+        <summary>标题</summary>
+        <p>asfasedef</p>
+        <p>asdashdfui收到回复i是的合并付款了是更好的办法u尽快回归若非克雷格放入饿死我购房人记录而各分局罗素外国人飞机录音</p>
+    </details>
+</section>
+<section>
+    <img src="iG%20乐芙兰.jpg" alt="乐芙兰" usemap="#tu">
+    <map name="tu">
+        <area shape="circle" coords="400,400,400" href="https://lol.qq.com/main.shtml" target="_blank">
+    </map>
+    <a href="https://lol.qq.com/main.shtml"><img src="iG%20乐芙兰.jpg" alt="乐芙兰"></a>
+</section><br><br><br>
+<section>
+    <video src="Screenrecorder-2020-08-21-20-17-39-778(0).mp4" width="1200" height="500" controls autoplay muted poster="iG%20乐芙兰.jpg" loop>
+        <track src="字幕.vtt" srclang="zh" label="中文字幕" kind="subtitles" default>
+        <!--字幕的实现需要服务器-->
+        不知道为啥不能播放
+    </video>
+    <video width="1200" height="500" controls>
+        <!--source设置备胎保证视频播放成功率-->
+        <source src="Screenrecorder-2020-08-21-20-17-39-778(0).mp4" type="video/mp4">
+        <source src=""type="">
+    </video>
+</section><br><br>
+<audio src="周杰伦%20-%20等你下课%20(with%20杨瑞代).mp3" controls>
+    无法播放
+</audio>
+    <iframe src="https://www.baidu.com" width="1024px" height="800px">不支持</iframe>
+    <!--使用sandbox沙盒对网页进行限制-->
+    <iframe src="https://www.baidu.com" width="1024px" height="800px" sandbox="">不支持</iframe>
 </body>
 </html>
